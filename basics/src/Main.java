@@ -1,5 +1,5 @@
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -11,9 +11,8 @@ public class Main {
         int turtleCount = 0;
         System.out.println("I own " + turtleCount + " " + pluralize("turtle", turtleCount) + ".");
 
-        flipNHeads(4);
         flipNHeads(1);
-        flipNHeads(6);
+        flipNHeads(2);
 
         clock();
 
@@ -29,31 +28,45 @@ public class Main {
         }
     }
 
-    public static void flipNHeads(int turns) {
+    public static void flipNHeads(int heads) {
 
-         int counter = 0;
+         int counts = 0;
+         int trials = 0;
 
-        for (int i = 0; i < turns; i++) {
+        while (counts != heads){
             double randomNum = Math.random();
             if (randomNum >= 0.5) {
                 System.out.println("heads");
-                counter++;
+                counts++;
             } else {
                 System.out.println("tails");
-                counter++;
+                counts = 0;
             }
+            trials++;
         }
-        System.out.println("It took " + turns + pluralize(" flip", turns) + " to flip " + counter + " head in a row.");
+        System.out.println("It took " + trials + pluralize(" flip", trials) + " to flip " + counts + pluralize(" head", trials) +" in a row.");
 
     }
 
     public static void clock() {
 
-        for (int i = 0; i >=0 ; i++) {
-            LocalDateTime now = LocalDateTime.now();
-            String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
-            System.out.println(time);
-        }
+        LocalDateTime now = LocalDateTime.now();
+        int preSecond = now.getSecond();
+        double counter = 0;
 
+        for (int i = 0; i >=0 ; i++) {
+
+            now = LocalDateTime.now();
+            int hour = now.getHour();
+            int minute = now.getMinute();
+            int postSecond = now.getSecond();
+            counter++;
+
+            if (postSecond - preSecond == 1) {
+                System.out.println(hour + ":" + minute + ":" + postSecond + " " + counter/1000000 + " MHz");
+                preSecond++;
+                counter = 0;
+            }
+        }
     }
 }

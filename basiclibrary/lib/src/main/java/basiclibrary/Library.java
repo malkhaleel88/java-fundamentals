@@ -4,31 +4,16 @@
 package basiclibrary;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
-
 
 public class Library {
 
     public static void main(String[] args) {
 
-//        int[] myArray = roll(4);
-//        System.out.println(Arrays.toString(myArray));
-//        System.out.println(containsDuplicates(myArray));
-//        System.out.println(average(myArray));
-
-        int [][] weeklyMonthTemperatures = {
-                {66, 64, 58, 65, 71, 57, 60},
-                {57, 65, 65, 70, 72, 65, 51},
-                {55, 54, 60, 53, 59, 57, 61},
-                {65, 56, 55, 52, 55, 62, 57}
-        };
-        lowestAverage(weeklyMonthTemperatures);
     }
 
 
-    public static int[] roll(int numRoll) {
+    public int[] roll(int numRoll) {
 
         int[] tryArray = new int[numRoll];
 
@@ -38,7 +23,7 @@ public class Library {
         return tryArray;
     }
 
-    public static boolean containsDuplicates(int[] inputArray) {
+    public boolean containsDuplicates(int[] inputArray) {
       boolean status = false;
         for (int i = 0; i < inputArray.length; i++) {
             for (int j = i+1; j < inputArray.length; j++) {
@@ -50,7 +35,7 @@ public class Library {
         return status;
     }
 
-    public static double average(int[] inputArray) {
+    public double average(int[] inputArray) {
         int sum = 0;
         for (int i = 0; i < inputArray.length; i++) {
             sum = sum + inputArray[i];
@@ -59,8 +44,10 @@ public class Library {
         return avg;
     }
 
-    public static int[] lowestAverage(int[][] array){
-        List<Double> averageCollection = new ArrayList<Double>();
+    public int[] lowestAverage(int[][] array){
+
+        ArrayList<Double> averageCollection = new ArrayList<>();
+
         for(int i=0; i<array.length;i++){
             double sum=0;
             for(int j = 0 ; j<array[i].length;j++){
@@ -68,7 +55,6 @@ public class Library {
             }
             averageCollection.add(sum/array[i].length);
         }
-        System.out.println("The min value is of average at index: "+averageCollection.indexOf(Collections.min(averageCollection)));
         return array[averageCollection.indexOf(Collections.min(averageCollection))];
     }
 

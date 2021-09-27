@@ -9,7 +9,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class LibraryTest {
     @Test void someLibraryMethodReturnsTrue() {
         Library classUnderTest = new Library();
-//       assertEquals(2 , classUnderTest.roll(2).length);
-//       assertTrue(classUnderTest.containsDuplicates(new int[]{2,2,3,4}));
+
+        assertEquals(3,classUnderTest.roll(3).length);
+        assertTrue(classUnderTest.containsDuplicates(new int[]{2,2,3,4}));
+        assertEquals(2.5,classUnderTest.average(new int[]{2,2,2,4}));
+        assertArrayEquals(new int[]{2,2,2,2},classUnderTest.lowestAverage(new int[][]{{2,2,2,2},{3,3,3,3}}));
     }
 }

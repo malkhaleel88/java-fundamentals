@@ -73,7 +73,6 @@ public class Library {
                 }
             }
         }
-
         Set<Integer> uniqueTemp = new HashSet<>();
         String reqString = "High: " + max + "\n" + "Low : " + min;
 
@@ -82,7 +81,6 @@ public class Library {
             for (int j = 0; j < arr[i].length; j++) {
 
                 uniqueTemp.add(arr[i][j]);
-
             }
         }
         for(int i = min; i < max; i++)

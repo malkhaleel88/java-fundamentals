@@ -1,6 +1,8 @@
 package basiclibrary;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -20,5 +22,21 @@ public class Main {
         };
 
         System.out.println(Arrays.toString(callingFunc.lowestAverage(weeklyMonthTemperatures)));
+
+        System.out.println(callingFunc.valuesNotInside(weeklyMonthTemperatures));
+
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+
+        String winner = callingFunc.tally(votes);
+        System.out.println(winner + " received the most votes!");
     }
 }

@@ -3,8 +3,7 @@
  */
 package basiclibrary;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 public class Library {
 
@@ -57,5 +56,59 @@ public class Library {
         }
         return array[averageCollection.indexOf(Collections.min(averageCollection))];
     }
+
+
+    public String valuesNotInside(int[][] arr) {
+
+        int max = arr[0][0];
+        int min = arr[0][0];
+        for (int i = 0; i < arr.length; i++) {
+
+            for (int j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] <= min) {
+                    min = arr[i][j];
+                }
+                if (arr[i][j] >= max) {
+                    max = arr[i][j];
+                }
+            }
+        }
+        Set<Integer> uniqueTemp = new HashSet<>();
+        String reqString = "High: " + max + "\n" + "Low : " + min;
+
+        for (int i = 0; i < arr.length; i++) {
+
+            for (int j = 0; j < arr[i].length; j++) {
+
+                uniqueTemp.add(arr[i][j]);
+            }
+        }
+        for(int i = min; i < max; i++)
+
+            if(uniqueTemp.contains(i)){
+
+            }
+            else{
+                reqString = reqString.concat("\n"+"Never saw temperature: " + i);
+            }
+
+        return reqString;
+    }
+
+    public String tally(List<String> name) {
+        HashSet<String> uniqueNames = new HashSet<>();
+        uniqueNames.addAll(name);
+        int numOfVotes = 0;
+        String nameWin = null;
+        for (String item : uniqueNames) {
+            int count = Collections.frequency(name, item);
+            if (numOfVotes < count) {
+                numOfVotes = count;
+                nameWin = item;
+            }
+        }
+        return nameWin;
+    }
+
 
 }

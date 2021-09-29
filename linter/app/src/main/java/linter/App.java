@@ -10,23 +10,25 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
-        linter();
+
+        String path = "./app/src/main/resources/gates.js";
+        System.out.println(linter(path));
     }
 
-    public static void linter() {
+    public static String linter(String filePath) {
 
+        String printLine = "";
         try {
 
-            File myPath = new File("./app/src/main/resources/gates.js");
+            File myPath = new File(filePath);
             Scanner lineReader = new Scanner(myPath);
             int counter = 1;
             while (lineReader.hasNextLine()) {
                 String line = lineReader.nextLine();
-                if (!line.endsWith(";") && !line.endsWith("}") && !line.endsWith("{") && !line.contains("else") && !line.contains("if") && !line.isEmpty()) {
+                if (!line.endsWith(";") && !line.endsWith("}") && !line.endsWith("{") && !line.contains("else") && !line.contains("if") && !line.isEmpty() || line.contains("return") && !line.endsWith(";")) {
 
-                    String printLine = "Line " + counter + " : Missing semicolon.";
+                    printLine = printLine + "Line " + counter + " : Missing semicolon.\n";
 
-                    System.out.println(printLine);
                 }
                 counter++;
             }
@@ -34,5 +36,6 @@ public class App {
         } catch (IOException ioException) {
             System.out.println(ioException.getMessage());
         }
+        return printLine;
     }
 }

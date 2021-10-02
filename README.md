@@ -12,3 +12,21 @@
 
 * **clock()**:  This method uses Java’s built-in LocalDateTime object to constantly print out the current time to the console, second by second. The program should run until someone manually kills it with **CTRL-C** or presses the**stop** button in their IDE.
 
+
+
+
+
+## **Lab: 02 - Arrays, for loops, testing**
+
+- ### **Files : "Main.java", "Library.java" , "LibraryTest.java" inside "basiclibrary" folder in project directory.**
+
+- ### **Methods : "roll()","containsDuplicates()","average()","lowestAverage()".**
+
+
+
+## **Lab: 03 - Maps and File I/O**
+
+- ### **Files : 1- "Main.java", "Library.java" , "LibraryTest.java" inside "basiclibrary" folder in project directory.**
+  ### **2- "App.java", "gates.js" , "AppTest.java" inside "linter" folder in project directory.**
+- ### **Methods : "valuesNotInside()","tally()","linter()".**
+

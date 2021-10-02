@@ -5,14 +5,16 @@ package linter;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
 
-        String path = "./app/src/main/resources/gates.js";
-        System.out.println(linter(path));
+        Path path = Paths.get("./app/src/main/resources/gates.js");
+        System.out.println(linter(path.toString()));
     }
 
     public static String linter(String filePath) {

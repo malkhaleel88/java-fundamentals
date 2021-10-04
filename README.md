@@ -12,10 +12,7 @@
 
 * **clock()**:  This method uses Java’s built-in LocalDateTime object to constantly print out the current time to the console, second by second. The program should run until someone manually kills it with **CTRL-C** or presses the**stop** button in their IDE.
 
-
-
-
-
+-------------------------------------------------------------------------------------------------------------------------
 ## **Lab: 02 - Arrays, for loops, testing**
 
 - ### **Files : "Main.java", "Library.java" , "LibraryTest.java" inside "basiclibrary" folder in project directory.**
@@ -30,7 +27,7 @@
 
 * **lowestAverage()**: This method accepts an **int array of arrays** and  calculate the average value for each array and return the array with the lowest average.
 
-
+-------------------------------------------------------------------------------------------------------------------------
 
 ## **Lab: 03 - Maps and File I/O**
 
@@ -45,3 +42,20 @@
 
 * **linter()**: This method accepts a **String path**. the path is the path of the javaScript file. The parpouse of this method is generates an error message whenever it finds a line that doesn’t end in a semi-colon.
 
+--------------------------------------------------------------------------------------------------------------------------
+
+# Lab: 06 - Inheritance and Interfaces
+
+## Classes in this lab:
+
+Library, Restaurant, Review
+
+## Fields
+
+**For Restaurant:** name, rate, priceCategory
+
+**Review:** body, author, starsNumber
+
+## Methods:
+
+Review, Getters, toString, addReview, updateStars

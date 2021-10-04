@@ -44,18 +44,18 @@
 
 --------------------------------------------------------------------------------------------------------------------------
 
-# Lab: 06 - Inheritance and Interfaces
+## **Lab: 06 - Inheritance and Interfaces**
 
-## Classes in this lab:
+### **Classes in this lab:**
 
 Library, Restaurant, Review
 
-## Fields
+### **Fields**
 
 **For Restaurant:** name, rate, priceCategory
 
 **Review:** body, author, starsNumber
 
-## Methods:
+### **Methods:**
 
 Review, Getters, toString, addReview, updateStars

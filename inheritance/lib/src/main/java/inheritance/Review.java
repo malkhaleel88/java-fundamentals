@@ -12,6 +12,7 @@ public class Review {
         this.stars = stars;
     }
 
+
     public int getStars() {
         return stars;
     }

@@ -58,4 +58,61 @@ Library, Restaurant, Review
 
 ### **Methods:**
 
-Review, Getters, toString, addReview, updateStars
+1.  **Restaurant Class**: The Constructor of Restaurant class acept three variables:
+   
+    * `String name`: For the restaurant name.
+    * `double rate`: For the rate of the restaurant between *0* and *5*.
+    * `String  price`: For a price category.
+
+* `getReviews()`: The Type of this method is  `LinkedList<Review>` and it is for store the all reviews in the list.
+
+* `addReview(Review review)`: This method is the Override method from the *RestaurantInterface*, and it accepts a `Review` variable type. Its purpose to add the review in the list of reviews. Also insude this method I call the `updateStars()`.
+
+* `updateStars()`: The purpose of this method is to update the rate of the restaurant (depend on the stars from reviews) by calculating the average of stars.
+
+* `toString()`: To print the restaurant data.
+
+2. **Review Class**: The Constructor of Review class acept three variables:
+   
+    * `String body`: For writing the review.
+    * `String author`: For the person name who writing the review.
+    * `double stars`: For rating the restaurant from the person.
+
+* `getStars()`: Its purpose to return the stars from the review which person was choosing.
+
+
+* `toString()`: To print the Review data.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+## **Lab: 07 -  Inheritance, day 2**
+
+### Overview
+
+In this lab I added a two new class the first one is **Shop** class and the second one is **Theater** class.
+
+### Methods
+
+1. **Shop Class**: The Constructor of Shop class acept three variables:
+
+    * `String name`: For the shop name.
+    * `String description`: For store a description about the shop.
+    * `int numOfDollarSigns`: For store the number of DollarSigns.
+
+* `getShopReviews()`: The Type of this method is  `LinkedList<Review>` and it is for store the all reviews in the list.
+
+* `addShopReview(Review review)`: This method is the Override method from the *ShopInterface*, and it accepts a `Review` variable type. Its purpose to add the review in the list of reviews. Also insude this method I call the `updateStars()`.
+
+* `toString()`: To print the Shop data.
+
+2. **Theater Class**: The Constructor of Theater class acept one variable:
+
+    * `String name`: For the theater name.
+
+* `getTheaterReviews()`: This method to store the all reviews in the map.
+
+* `addTheaterReview(Review rev, String movieName)`: This method accept `Review` value for the review and `String` value for the movie name. This method check if the movie is existing in the list of movies or not. If is existing, you can write a review about it.
+
+* `addMovie(String movie)`: This method accept `String` value for movie title. Its purpose to add any movie you want in the movies list.
+
+* `removeMovie(String movie)`: This method accept `String` value for movie title. Its purpose to remove any movie you want in the movies list.

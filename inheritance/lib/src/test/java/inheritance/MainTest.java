@@ -5,12 +5,34 @@ package inheritance;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class MainTest {
 
-        @Test void someLibraryMethodReturnTrue(){
-        Main classUnderTest = new Main();
+
+        @Test void RestaurantTest() {
+                Restaurant restaurant = new Restaurant("kfc",4,10);
+
+                assertEquals("Restaurant -> {name='kfc', rate=4.0, $}", restaurant.toString());
         }
-        @Test void constructorRestaurant() {
-            Restaurant test = new Restaurant("kfc",4,10);
+
+
+        @Test void ReviewTest() {
+                Review review = new Review("Very Good", "Mohammad Al-Khaleel", 4);
+
+                assertEquals("{body='Very Good', author='Mohammad Al-Khaleel', ****}" , review.toString());
+        }
+        @Test void addReviewsTest(){
+                Restaurant restaurant = new Restaurant("kfc",4,10);
+
+                Review review1 = new Review ("Good","Mohammad", 4);
+                Review review2 = new Review("Perfect","Ghadeer", 5);
+                Review review3 = new Review("Not Delicious","Noor",2);
+
+                restaurant.addReview(review1);
+                restaurant.addReview(review2);
+                restaurant.addReview(review3);
+
+                assertEquals("[{body='Good', author='Mohammad', ****}, {body='Perfect', author='Ghadeer', *****}, {body='Not Delicious', author='Noor', **}]", restaurant.getReviews().toString());
         }
 }

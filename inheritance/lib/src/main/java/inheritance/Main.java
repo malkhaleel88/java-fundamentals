@@ -3,7 +3,6 @@
  */
 package inheritance;
 
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,11 +10,31 @@ public class Main {
         Restaurant rest = new Restaurant("KFC", 0, 55);
         System.out.println(rest);
 
+        Shop shop = new Shop("Carrefour","Grocery Stuff",10);
+        System.out.println(shop);
+
+        Theater theater = new Theater("VOX");
+        theater.addMovie("Avatar");
+        theater.addMovie("Hobbit");
+        theater.addMovie("Lord Of The Rings");
+        System.out.println(theater);
+        theater.removeMovie("Lord Of The Rings");
+        System.out.println(theater);
+
+
         Review review1 = new Review("Very Good", "Mohammad Al-Khaleel", 4);
         rest.addReview(review1);
+        shop.addShopReview(review1);
+        theater.addTheaterReview(review1, "Shawshank");
         Review review2 = new Review("Good", "Ghadeer", 1);
         rest.addReview(review2);
+        shop.addShopReview(review2);
+        theater.addTheaterReview(review2, "Hobbit");
         System.out.println(rest.getReviews());
+        System.out.println(shop.getShopReviews());
+        System.out.println(theater.getTheaterReviews());
         System.out.println(rest);
+        theater.addTheaterReview(review1, "Shawshank");
+
     }
 }

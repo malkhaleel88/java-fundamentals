@@ -9,6 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MainTest {
 
+         /**
+            * Lab:6 Tests
+        */
 
         @Test void RestaurantTest() {
                 Restaurant restaurant = new Restaurant("kfc",4,10);
@@ -22,7 +25,8 @@ class MainTest {
 
                 assertEquals("{body='Very Good', author='Mohammad Al-Khaleel', ****}" , review.toString());
         }
-        @Test void addReviewsTest(){
+
+        @Test void AddReviewsTest(){
                 Restaurant restaurant = new Restaurant("kfc",4,10);
 
                 Review review1 = new Review ("Good","Mohammad", 4);
@@ -35,4 +39,91 @@ class MainTest {
 
                 assertEquals("[{body='Good', author='Mohammad', ****}, {body='Perfect', author='Ghadeer', *****}, {body='Not Delicious', author='Noor', **}]", restaurant.getReviews().toString());
         }
+
+        /**
+         * Lab:7 Test
+         */
+
+        @Test
+        void ShopTest() {
+                Shop shop = new Shop("Carrefour","Grocery Stuff",10);
+
+                assertEquals("Shop{name='Carrefour', description='Grocery Stuff', price=$}", shop.toString());
+        }
+
+        @Test
+        void ShopReviewTest() {
+                Review shop = new Review("Perfect", "Ahmad", 5);
+
+                assertEquals("{body='Perfect', author='Ahmad', *****}", shop.toString());
+        }
+
+        @Test
+        void ShopAddReviewsTest() {
+                Shop shop = new Shop("Carrefour","Grocery Stuff",10);
+
+                Review review1 = new Review ("Good","Mohammad", 4);
+                Review review2 = new Review("Perfect","Ghadeer", 5);
+                Review review3 = new Review("Not Delicious","Noor",2);
+
+                shop.addShopReview(review1);
+                shop.addShopReview(review2);
+                shop.addShopReview(review3);
+                assertEquals("[{body='Good', author='Mohammad', ****}, {body='Perfect', author='Ghadeer', *****}, {body='Not Delicious', author='Noor', **}]", shop.getShopReviews().toString());
+        }
+
+        @Test
+        void TheaterTest() {
+                Theater theater = new Theater("VOX");
+
+                assertEquals("Theater{name='VOX', moviesName=[]}", theater.toString());
+        }
+
+        @Test
+        void TheaterReviewTest() {
+                Review theater = new Review ("Good","Mohammad", 4);
+
+                assertEquals("{body='Good', author='Mohammad', ****}", theater.toString());
+        }
+
+        @Test
+        void TheaterAddMovieTest() {
+                Theater theater = new Theater("VOX");
+
+                theater.addMovie("Avatar");
+                theater.addMovie("Hobbit");
+                theater.addMovie("Lord Of The Rings");
+
+                assertEquals("Theater{name='VOX', moviesName=[Avatar, Hobbit, Lord Of The Rings]}", theater.toString());
+        }
+
+        @Test
+        void TheaterRemoveMovieTest() {
+                Theater theater = new Theater("VOX");
+
+                theater.addMovie("Avatar");
+                theater.addMovie("Hobbit");
+                theater.addMovie("Lord Of The Rings");
+
+                theater.removeMovie("Lord Of The Rings");
+
+                assertEquals("Theater{name='VOX', moviesName=[Avatar, Hobbit]}", theater.toString());
+        }
+
+        @Test
+        void TheaterAddReviewsTest() {
+                Theater theater = new Theater("VOX");
+
+                Review review1 = new Review ("Good","Mohammad", 4);
+                Review review2 = new Review("Perfect","Ghadeer", 5);
+                Review review3 = new Review("Not Delicious","Noor",2);
+
+                theater.addTheaterReview(review1, "Hobbit");
+                theater.addTheaterReview(review2, "Avatar");
+                theater.addTheaterReview(review3, "Shawshank");
+
+                assertEquals("{{body='Not Delicious', author='Noor', **}=Shawshank, {body='Good', author='Mohammad', ****}=Hobbit, {body='Perfect', author='Ghadeer', *****}=Avatar}", theater.getTheaterReviews().toString());
+        }
+
+
 }
